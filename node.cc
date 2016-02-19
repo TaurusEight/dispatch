@@ -1,4 +1,4 @@
-// Time-stamp: <2016-02-19 15:25:11 dmendyke>
+// Time-stamp: <2016-02-19 15:41:34 dmendyke>
 
 
 //
@@ -51,9 +51,8 @@ one::one( ) : node( ), value(), answer() {
 //-----------------------------------------------------------------------------
 void one::parse( const string& line ) {
 
-  stringstream stream;
+  stringstream stream( line );
 
-  stream.str( line );
   stream >> value >> answer;
 
 };  // end one::parse
@@ -83,9 +82,8 @@ two::two( ) : node( ), value(), color() {
 //-----------------------------------------------------------------------------
 void two::parse( const string& line ) {
 
-  stringstream stream;
+  stringstream stream( line );
 
-  stream.str( line );
   stream >> value >> color;
 
 };  // end two::parse
