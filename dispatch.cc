@@ -1,4 +1,4 @@
-// Time-stamp:  <2016-02-19 15:30:41 dmendyke>
+// Time-stamp:  <2016-02-19 15:48:54 dmendyke>
 
 
 //
@@ -37,12 +37,12 @@ dispatch_table::~dispatch_table() {
 
 // Find the command in the table
 //-----------------------------------------------------------------------------
-void dispatch_table::find( const string& line ) {
+node_ptr dispatch_table::find( const string& line ) {
 
   string command( line.substr( 0x0, 0x3 ) );
   node_ptr ptr( map_[ command ]() );
 
   ptr->parse( line.substr( command.size() ) );
-  cerr << *ptr << endl;
+  return ptr;
 
 };  // end find

@@ -1,4 +1,4 @@
-// Time-stamp: <2016-02-19 15:23:16 dmendyke>
+// Time-stamp: <2016-02-19 15:50:56 dmendyke>
 
 
 //
@@ -44,14 +44,16 @@ int application::run() {
 
   try {
 
-    table_.find( "one 1 no" );
-    table_.find( "two 4.04 blue" );
-    table_.find( "two 9.12 yellow" );
-    table_.find( "one 88 yes" );
+    cerr << *table_.find( "one 1 no" ) << endl;
+    cerr << *table_.find( "two 4.04 blue" ) << endl;
+    cerr << *table_.find( "two 9.12 yellow" ) << endl;
+    cerr << *table_.find( "one 88 yes" ) << endl;
 
   } catch( exception& except ) {
+
     cerr << "Error: " << except.what() << endl;
     result = -1;
+
   };  // end try / catch
 
   return result;

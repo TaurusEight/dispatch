@@ -1,4 +1,4 @@
-// Time-stamp: <2016-02-19 14:51:49 dmendyke>
+// Time-stamp: <2016-02-19 15:49:07 dmendyke>
 #ifndef __DISPATCH_HH__
 #define __DISPATCH_HH__
 
@@ -25,7 +25,7 @@ namespace sample {
     dispatch_table();
     virtual ~dispatch_table();
 
-    void find( const std::string& );
+    node_ptr find( const std::string& );
 
   private:
 
