@@ -1,4 +1,4 @@
-// Time-stamp:  <2016-02-19 15:48:54 dmendyke>
+// Time-stamp:  <2016-02-19 15:56:03 dmendyke>
 
 
 //
@@ -9,6 +9,7 @@
 // Required header files
 //-----------------------------------------------------------------------------
 #include <iostream>  // std::cerr
+#include <sstream>  // std::stringstream
 #include <memory>  // std::unique_ptr
 #include "dispatch.hh"  // sample::dispatch_table
 
@@ -39,7 +40,10 @@ dispatch_table::~dispatch_table() {
 //-----------------------------------------------------------------------------
 node_ptr dispatch_table::find( const string& line ) {
 
-  string command( line.substr( 0x0, 0x3 ) );
+  stringstream stream( line );
+  string command;
+
+  stream >> command;
   node_ptr ptr( map_[ command ]() );
 
   ptr->parse( line.substr( command.size() ) );
