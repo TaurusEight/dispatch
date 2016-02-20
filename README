@@ -1,14 +1,21 @@
 
-Time-stamp: <2016-02-19 16:03:09 dmendyke>
+Time-stamp: <2016-02-19 16:04:03 dmendyke>
 
 A simple dispatch table to generate child objects based on a text index.
 Each object has a different set of parameters associated with it.
 
 No use is made of "if/else" statements.
 
+
+Building:
+
+  make
+  make run
+
+
 Improvements:
 
-  * Store node_ptr objects in a vector for later use rather than simply printing
-    them out to a stream.
+  * Store node_ptr objects in a vector for later use rather
+    than simply printing them out to a stream.
 
   * Add additional object types.
